@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ConcurrentLab2.Bench-20210308-144906</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.12.1, OS=Windows 10.0.20270
+Intel Core i5-8265U CPU 1.60GHz (Whiskey Lake), 1 CPU, 8 logical and 4 physical cores
+.NET Core SDK=5.0.102
+  [Host]     : .NET Core 5.0.2 (CoreCLR 5.0.220.61120, CoreFX 5.0.220.61120), X64 RyuJIT
+  DefaultJob : .NET Core 5.0.2 (CoreCLR 5.0.220.61120, CoreFX 5.0.220.61120), X64 RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>     method</th><th>Mean</th><th>Error</th><th>StdDev</th>
+</tr>
+</thead><tbody><tr><td>ParallelFor</td><td>MostCommonFile</td><td>533.6 ms</td><td>9.87 ms</td><td>9.70 ms</td>
+</tr><tr><td>Serial</td><td>MostCommonFile</td><td>352.4 ms</td><td>6.93 ms</td><td>12.14 ms</td>
+</tr><tr><td>Linq</td><td>MostCommonFile</td><td>741.7 ms</td><td>14.20 ms</td><td>16.91 ms</td>
+</tr><tr><td>Plinq</td><td>MostCommonFile</td><td>1,112.4 ms</td><td>32.20 ms</td><td>83.68 ms</td>
+</tr><tr><td>ParallelFor</td><td>MostFrequentWords</td><td>215.8 ms</td><td>4.24 ms</td><td>7.65 ms</td>
+</tr><tr><td>Serial</td><td>MostFrequentWords</td><td>262.7 ms</td><td>5.03 ms</td><td>5.79 ms</td>
+</tr><tr><td>Linq</td><td>MostFrequentWords</td><td>466.8 ms</td><td>9.21 ms</td><td>19.23 ms</td>
+</tr><tr><td>Plinq</td><td>MostFrequentWords</td><td>289.9 ms</td><td>5.75 ms</td><td>12.25 ms</td>
+</tr><tr><td>ParallelFor</td><td>MostLongWord</td><td>110.7 ms</td><td>2.19 ms</td><td>2.15 ms</td>
+</tr><tr><td>Serial</td><td>MostLongWord</td><td>169.5 ms</td><td>3.20 ms</td><td>3.14 ms</td>
+</tr><tr><td>Linq</td><td>MostLongWord</td><td>176.5 ms</td><td>3.25 ms</td><td>3.04 ms</td>
+</tr><tr><td>Plinq</td><td>MostLongWord</td><td>233.7 ms</td><td>4.48 ms</td><td>5.98 ms</td>
+</tr></tbody></table>
+</body>
+</html>
